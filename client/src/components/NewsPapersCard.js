@@ -23,7 +23,7 @@ const NewsPaperCard = () => {
 
     return (
         <div className="container mt-5">
-            <h3 className="mt-2 mb-3">Choose Your News Paper</h3>
+            <h4 className="mt-2 mb-3">Choose Your News Paper</h4>
             <div className="row d-flex justify-content-around">
                 {paperDetails.map((details) => {
                     return (

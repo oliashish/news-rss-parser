@@ -1,0 +1,12 @@
+.card-sizing {
+    border: 1px solid black;
+}
+.card-sizing img {
+    width: 100%;
+    height: 20vh;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    object-fit: cover;
+}

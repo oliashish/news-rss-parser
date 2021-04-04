@@ -42,7 +42,4 @@ route.get("/feeds/:category/:paperName", async (req, res) => {
     const PureNews = RssFeeds.items;
     res.send(PureNews);
 });
-route.get("/feeds", (req, res) => {
-    res.send("in feeds route.");
-});
 module.exports = route;

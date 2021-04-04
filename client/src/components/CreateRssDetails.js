@@ -22,7 +22,7 @@ const CreateRssDetails = () => {
         formData.append("rssFeedLink", rssFeedLink);
         formData.append("image", image);
 
-        const response = Axios.post("http://localhost:8080/feeds", formData);
+        const response = Axios.post("/feeds", formData);
         console.log(response);
     };
 

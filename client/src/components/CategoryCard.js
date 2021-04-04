@@ -14,9 +14,7 @@ class CategoryCard extends React.Component {
     }
 
     async componentDidMount() {
-        const response = await Axios.get(
-            "http://localhost:8080/feeds/categories"
-        );
+        const response = await Axios.get("/feeds/categories");
         this.setState({ rssDetails: response.data });
         this.state.rssDetails.map((data) => {
             return this.state.categories.push(data.category);

@@ -11,7 +11,7 @@ const RssFeedList = () => {
     useEffect(() => {
         async function FetchData() {
             const RssFeedsData = await Axios.get(
-                `http://localhost:8080/feeds/${category}/${newsPaperName}`
+                `/feeds/${category}/${newsPaperName}`
             );
             console.log("data recived : ", RssFeedsData);
             setRssFeedsList(RssFeedsData.data);

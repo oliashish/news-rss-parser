@@ -13,7 +13,7 @@ const NewsPaperCard = () => {
     useEffect(() => {
         async function FetchData() {
             const response = await Axios.get(
-                "http://localhost:8080/feeds/by/" + params.category
+                "/feeds/by/" + params.category
             );
 
             setPaperDetails(response.data);

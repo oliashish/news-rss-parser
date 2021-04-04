@@ -27,18 +27,17 @@ class CategoryCard extends React.Component {
                 (value, index) => this.state.categories.indexOf(value) === index
             ),
         });
-        console.log(this.state.filteredCategories);
     }
 
     render() {
         return (
-            <div className="container-fluid card-holder px-0 mt-5">
-                <h5 className="mt-2">Get News And Articles By Category</h5>
+            <div className="container-fluid card-holder px-0 mt-2">
+                <h5 className="mt-4">Get Daily News And Articles</h5>
 
                 <div className="row container-fluid d-flex mx-0 mt-3">
                     {this.state.filteredCategories.map((category) => {
                         return (
-                            <NavLink to={category} className="link-decor col-4">
+                            <NavLink to={category} className="link-decor">
                                 <div
                                     className="container-fluid category-card p-5"
                                     key={category}

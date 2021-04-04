@@ -3,8 +3,10 @@ import "./Header.css";
 
 const Header = () => {
     return (
-        <div className="container header p-4">
-            <h2>Hey Mate! Help Yourself and Grow</h2>
+        <div className="container header mt-3">
+            <div className="logo-container">
+                <img src={"/images/logofeedr.png"} alt="Feedr logo"></img>
+            </div>
         </div>
     );
 };

@@ -1,3 +1,21 @@
-.header {
-    text-shadow: 0 3px 5px grey;
+.logo-container {
+    width: 25%;
+    height: 18vh;
+}
+
+.logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 780px) {
+    .logo-container {
+        width: 50%;
+        height: 20vh;
+    }
+    .header {
+        display: flex;
+        justify-content: center;
+    }
 }

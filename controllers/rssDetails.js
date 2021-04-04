@@ -1,18 +1,11 @@
 const rssDetailsModel = require("../models/rssDetails");
-const xmlParser = require("fast-xml-parser");
-const fetch = require("node-fetch");
+const Parser = require("rss-parser");
+let parser = new Parser();
 
+// This function is to get Rss Feeds and parse(as rss feeds are by default xml) that to JSON.
 function getRssFeeds(RssLink) {
-    return fetch(RssLink)
-        .then((res) => res.text())
-        .then((xmlString) => {
-            let xmlObj = xmlParser.getTraversalObj(xmlString, {});
-            let jsonObj = xmlParser.convertToJson(xmlObj, {});
-            return jsonObj;
-        })
-        .catch((error) => {
-            return error;
-        });
+    let RssFeeds = parser.parseURL(RssLink);
+    return RssFeeds;
 }
 
 const CreateRssDetails = (data, img) => {
@@ -20,14 +13,14 @@ const CreateRssDetails = (data, img) => {
 
     return recieveddata;
 };
-const GetRssDetails = async (category, paperName) => {
+const GetByDetails = async (category, paperName) => {
     const data = await rssDetailsModel.GetByDetails(category, paperName);
     const RssLink = data[0].rssFeedLink;
     const RssFeeds = getRssFeeds(RssLink);
     return RssFeeds;
 };
 const GetByCategory = async (category) => {
-    const data = await rssDetailsModel.GetDetailsByCategory(category);
+    const data = await rssDetailsModel.GetByCategory(category);
     return data;
 };
 const GetAllCategories = async () => {
@@ -37,7 +30,7 @@ const GetAllCategories = async () => {
 
 module.exports = {
     CreateRssDetails,
-    GetRssDetails,
+    GetByDetails,
     GetAllCategories,
     GetByCategory,
 };

@@ -20,7 +20,7 @@ const Create = (data, img) => {
     });
     return result;
 };
-const GetDetailsByCategory = async (category) => {
+const GetByCategory = async (category) => {
     const result = await new Promise((resolve, reject) => {
         rssDetailsSchema.find(
             { category: category },
@@ -39,18 +39,21 @@ const GetDetailsByCategory = async (category) => {
     return result;
 };
 const GetByDetails = async (category, paperName) => {
-    let result = [];
-    await rssDetailsSchema.find(
-        { category: category, paperName: paperName },
-        { __v: 0 },
-        function (err, res) {
-            if (err) {
-                result = err;
-            } else {
-                result = res;
+    const result = await new Promise((resolve, reject) => {
+        rssDetailsSchema.find(
+            { category: category, newsPaperName: paperName },
+            { rssFeedLink: true },
+            { __v: 0 },
+            (err, resp) => {
+                if (err) {
+                    reject(new Error(err.message));
+                }
+                resolve(resp);
             }
-        }
-    );
+        );
+    }).catch((error) => {
+        return error;
+    });
 
     return result;
 };
@@ -78,5 +81,5 @@ module.exports = {
     Create,
     GetByDetails,
     GetAllCategories,
-    GetDetailsByCategory,
+    GetByCategory,
 };

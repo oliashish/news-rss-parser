@@ -32,13 +32,16 @@ route.get("/feeds/by/:category", async (req, res) => {
     res.send(data);
 });
 
-/*route.get("/feeds/:category/:paperName", async (req, res) => {
+route.get("/feeds/:category/:paperName", async (req, res) => {
     const paperName = req.params.paperName;
     const category = req.params.category;
-    const data = await rssDetailsController.GetRssDetails(category, paperName);
-
-    res.send(data);
-});*/
+    const RssFeeds = await rssDetailsController.GetByDetails(
+        category,
+        paperName
+    );
+    const PureNews = RssFeeds.items;
+    res.send(PureNews);
+});
 route.get("/feeds", (req, res) => {
     res.send("in feeds route.");
 });

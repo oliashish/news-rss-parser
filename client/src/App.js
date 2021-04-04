@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import CategoryCard from "./components/CategoryCard";
 import CreateRssDetails from "./components/CreateRssDetails";
 import NewsPaperCard from "./components/NewsPapersCard";
+import RssFeedList from "./components/RssFeedList";
 
 function App() {
     return (
@@ -20,6 +21,11 @@ function App() {
                     component={CreateRssDetails}
                 ></Route>
                 <Route exact path="/:category" component={NewsPaperCard} />
+                <Route
+                    exact
+                    path="/:category/:newsPaperName"
+                    component={RssFeedList}
+                />
             </Switch>
         </div>
     );

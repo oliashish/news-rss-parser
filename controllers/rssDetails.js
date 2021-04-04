@@ -15,18 +15,29 @@ function getRssFeeds(RssLink) {
         });
 }
 
-const CreateRssDetails = (data) => {
-    const recieveddata = rssDetailsModel.Create(data);
+const CreateRssDetails = (data, img) => {
+    const recieveddata = rssDetailsModel.Create(data, img);
+
     return recieveddata;
 };
 const GetRssDetails = async (category, paperName) => {
-    const data = await rssDetailsModel.GetByName(category, paperName);
+    const data = await rssDetailsModel.GetByDetails(category, paperName);
     const RssLink = data[0].rssFeedLink;
     const RssFeeds = getRssFeeds(RssLink);
     return RssFeeds;
+};
+const GetByCategory = async (category) => {
+    const data = await rssDetailsModel.GetDetailsByCategory(category);
+    return data;
+};
+const GetAllCategories = async () => {
+    const data = await rssDetailsModel.GetAllCategories();
+    return data;
 };
 
 module.exports = {
     CreateRssDetails,
     GetRssDetails,
+    GetAllCategories,
+    GetByCategory,
 };

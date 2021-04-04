@@ -1,0 +1,17 @@
+.form-container {
+    width: 50%;
+}
+.form-container label {
+    margin: 10px 0;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-weight: bold;
+}
+
+.form-container input {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}

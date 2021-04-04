@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const rssFeedSchema = new mongoose.Schema({
-    paperName: {
+    newsPaperName: {
         type: String,
         required: true,
     },
@@ -9,6 +9,10 @@ const rssFeedSchema = new mongoose.Schema({
         required: true,
     },
     rssFeedLink: {
+        type: String,
+        required: true,
+    },
+    categoryImg: {
         type: String,
         required: true,
     },

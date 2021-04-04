@@ -1,24 +1,44 @@
 const rssDetailsSchema = require("./schema");
 
-const Create = (data) => {
+const Create = (data, img) => {
     const newsRssDetails = new rssDetailsSchema({
-        paperName: data.paperName,
+        newsPaperName: data.paperName,
         category: data.category,
         rssFeedLink: data.rssFeedLink,
+        categoryImg: img.filename,
     });
 
     const result = new Promise((resolve, reject) => {
         newsRssDetails.save(function (err, result) {
             if (err) {
                 reject(new Error(err.message));
+            } else {
+                console.log("success");
             }
-
-            const data = resolve(result);
+            resolve(result);
         });
     });
-    return data;
+    return result;
 };
-const GetByName = async (category, paperName) => {
+const GetDetailsByCategory = async (category) => {
+    const result = await new Promise((resolve, reject) => {
+        rssDetailsSchema.find(
+            { category: category },
+            { newsPaperName: true, categoryImg: true },
+            { __v: 0 },
+            (err, resp) => {
+                if (err) {
+                    reject(new Error(err.message));
+                }
+                resolve(resp);
+            }
+        );
+    }).catch((error) => {
+        return error;
+    });
+    return result;
+};
+const GetByDetails = async (category, paperName) => {
     let result = [];
     await rssDetailsSchema.find(
         { category: category, paperName: paperName },
@@ -34,4 +54,29 @@ const GetByName = async (category, paperName) => {
 
     return result;
 };
-module.exports = { Create, GetByName };
+const GetAllCategories = async () => {
+    const result = await new Promise((resolve, reject) => {
+        rssDetailsSchema.find(
+            {},
+            { category: true },
+            { __v: 0 },
+            function (err, res) {
+                if (err) {
+                    reject(new Error(err.message));
+                }
+                resolve(res);
+            }
+        );
+    }).catch((error) => {
+        return error;
+    });
+
+    return result;
+};
+
+module.exports = {
+    Create,
+    GetByDetails,
+    GetAllCategories,
+    GetDetailsByCategory,
+};

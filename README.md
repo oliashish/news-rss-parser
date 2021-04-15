@@ -5,10 +5,12 @@ This is a Rss feeds parser app, that parses rss feeds from different newspaper w
 - MERN 
 
 ### Description
-- In this app I store rss url of different popular newspapers with categories(like editorials, business and finance, national etc.) in my mongo database and as the user can  get the news from those rss feed urls.w
+- In this app I store rss url of different popular newspapers with categories(like editorials, business and finance, national etc.) in my mongo database and as the user can  get the news from those rss feed urls.
 - The xml rss is parsed to  json using a library called `rss-parser` .
 
 
 ### App completed :-) 
 
-This app is live at dailyfreshnews.herokuapp.com (although not so good UI)
+[The app is live at](dailyfreshnews.herokuapp.com) 
+
+(Although not so good UI)

@@ -11,6 +11,5 @@ This is a Rss feeds parser app, that parses rss feeds from different newspaper w
 
 ### App completed :-) 
 
-- The app is live at [dailyfreshnews.herokuapp.com](dailyfreshnews.herokuapp.com) 
-
+- The app is live at dailyfreshnews.herokuapp.com
 - (Although not so good UI)

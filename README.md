@@ -1,6 +1,9 @@
 # news-rss-parser
 This is a Rss feeds parser app, that parses rss feeds from different newspaper websites and deliver you the best news from all over the internet at one place.
 
+![Screenshot from 2020-06-12 11-31-25](https://user-images.githubusercontent.com/52878118/123844562-d16a6300-d930-11eb-9060-07df569d6f78.png)
+
+
 ### Tech stack
 - MERN 
 

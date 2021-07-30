@@ -12,7 +12,7 @@ const db = require("./models/database");
 const PORT = process.env.PORT || 8080;
 
 app.use(cors());
-app.use(expres.json({ extended: true }));
+app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "client" + "build")));
 

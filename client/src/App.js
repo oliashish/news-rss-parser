@@ -8,6 +8,9 @@ import CategoryCard from "./components/CategoryCard";
 import CreateRssDetails from "./components/CreateRssDetails";
 import NewsPaperCard from "./components/NewsPapersCard";
 import RssFeedList from "./components/RssFeedList";
+import axios from "axios";
+
+axios.defaults.baseURL = "https://dailyfreshnews.herokuapp.com";
 
 function App() {
     return (

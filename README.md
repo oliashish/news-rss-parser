@@ -1,7 +1,7 @@
-# news-RSS-parser
+# News-RSS-Parser
 
 - The app is live at dailyfreshnews.herokuapp.com
-RSS feeds parser app, that parses rss feeds from different newspaper websites and deliver you the best news from all over the internet at one place.
+RSS feeds parser app, that parses RSS feeds from different newspaper websites and deliver you the best news from all over the internet at one place.
 
 ![Screenshot from 2021-06-29 23-15-45](https://user-images.githubusercontent.com/52878118/123844743-04145b80-d931-11eb-903e-f569aa2ea506.png)
 
